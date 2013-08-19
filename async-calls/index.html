@@ -1,0 +1,23 @@
+<!DOCTYPE html>
+<html ng-app="async-call">
+
+  <head>
+    <meta charset="utf-8" />
+    <title>AngularJS Async Call</title>
+    <script>document.write('<base href="' + document.location + '" />');</script>
+    <script data-require="angular.js@1.0.x" src="http://code.angularjs.org/1.0.7/angular.min.js" data-semver="1.0.7"></script>
+    <script src="app.js"></script>
+  </head>
+
+  <body ng-controller="MainCtrl">
+  <h3>Get Items</h3>
+    <pre>{{items | json}}</pre>
+    
+    <h3>Get Nested Data</h3>
+    <pre>{{nestedItems | json}}</pre>
+    
+    <h3>Get Nested (Better)</h3>
+    <pre>{{betterNested | json}}</pre>
+  </body>
+
+</html>

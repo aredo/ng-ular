@@ -1,0 +1,38 @@
+<!DOCTYPE html>
+<html ng-app="angularjs-starter">
+  
+  <head lang="en">
+    <meta charset="utf-8">
+    <title>Custom Plunker</title>
+    <script src="//ajax.googleapis.com/ajax/libs/angularjs/1.0.7/angular.min.js"></script>
+    <script>
+      document.write('<base href="' + document.location + '" />');
+    </script>
+    <script src="app.js"></script>
+  </head>
+  
+  <body ng-controller="MainCtrl">
+    <h3>$scope.foo</h3>
+    <ul>
+      <li ng-repeat="item in foo">{{item.id}} - {{item.name}}</li>
+    </ul>
+
+    {{foo | json}}
+    
+    <h3>$scope.foo2</h3>
+    <ul>
+      <li ng-repeat="item in foo2">{{item.id}} - {{item.name}}</li>
+    </ul>
+    
+    <h3>$scope.bar</h3>
+    <ul>
+      <li ng-repeat="item in bar">{{item.id}} - {{item.name}}</li>
+    </ul>
+    
+    <br/>
+    
+    <h3>And here is what you get if you just return the promise returned by $http.get():</h3>
+    <pre>{{test | json}}</pre>
+  </body>
+
+</html>

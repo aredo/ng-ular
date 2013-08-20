@@ -1,0 +1,26 @@
+<!doctype html>
+<html lang="en" ng-app="inVoiceApp">
+<head>
+  <meta charset="utf-8">
+  <title>Simple Tutorial RESTful JSON Parsing</title>
+</head>
+<body>
+
+  <div id="ng-app" ng-app ng-controller="PostsCtrlAjax">  
+    <div ng-repeat="post in posts" class='postBody'>
+      <h2><a href='{{post.url}}'>{{post.title}}</a></h2>
+      <div class='time'>{{post.date}} - {{post.author.name}} </div>
+      {{post.excerpt}}
+      <img ng-src="{{post.banner}}" style='width:550px'/>
+  </div>
+
+  <script src="//ajax.googleapis.com/ajax/libs/angularjs/1.0.7/angular.min.js"></script>
+  <script>
+  function PostsCtrlAjax($scope, $http){
+    $http({method: 'GET', url: 'get_recent_posts.json'}).success(function(data) {
+      $scope.posts = data.posts;
+    });
+  }
+  </script>
+</body>
+</html>
